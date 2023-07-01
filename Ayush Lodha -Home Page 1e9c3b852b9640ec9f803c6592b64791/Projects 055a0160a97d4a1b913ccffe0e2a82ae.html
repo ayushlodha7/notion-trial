@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Projects</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="055a0160-a97d-4a1b-913c-cffe0e2a82ae" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1629954848757-921cf6d7d69e?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🚀</span></div><h1 class="page-title"><span style="border-bottom:0.05em solid">Projects</span></h1><p class="page-description"></p></header><div class="page-body"><h1 id="a996b432-2112-4cc2-a5e3-db39ed88c98b" class=""><span style="border-bottom:0.05em solid"><strong>MAJOR PROJECTS</strong></span></h1><h2 id="e5f081b0-c1f7-4d9d-acbd-68312a27efa2" class=""><span style="border-bottom:0.05em solid">COMPARATIVE STUDY OF EOF ANALYSIS ON SPATIOTEMPORAL DATASETS</span></h2><div id="a3ac512e-a925-487b-8608-b791324c6745" class="column-list"><div id="c35d4068-0701-4b50-9287-fd87154dfddf" style="width:50%" class="column"><figure id="7144c58d-ca6f-4331-8f30-35094147b3dd"><div class="source"><a href="https://docs.google.com/presentation/d/1wEz_teOKz-JD2xgvxba_EP8zaIPMTo1L/edit#slide=id.p1">https://docs.google.com/presentation/d/1wEz_teOKz-JD2xgvxba_EP8zaIPMTo1L/edit#slide=id.p1</a></div></figure></div><div id="c089f277-1ec3-4ec9-8409-5178b21d3f00" style="width:50.000000000000014%" class="column"><ul id="8aa128cb-4fab-4130-b994-0814877ffa23" class="bulleted-list"><li style="list-style-type:disc">Programmed various derivatives of EOF, such as r-EOF and ICA, on the Spatio-temporal dataset and analyzed the obtained results in the context of monsoons in India</li></ul><ul id="c56832b4-bfdf-44a1-87dc-0ae3291ed123" class="bulleted-list"><li style="list-style-type:disc">Analyzed decadal variation of ENSO and IOD Index and its correlation with principal components of Indian winter monsoons</li></ul><ul id="a677e12c-e2b7-45ba-a20e-6d5d5c294401" class="bulleted-list"><li style="list-style-type:disc">Identified year-wise anomalies having the highest correlation and looked at their effects on the precipitation patterns</li></ul><ul id="89b4301c-25ce-4d0d-9dad-61b7d4af67d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Skills Gained:</strong> Principal Component Analysis, Single Value Decomposition, Big Data Handling, Independent Component Analysis, Seasonality Variation, Empirical Orthogonal Function.</li></ul><ul id="7ff0dcd3-095c-431e-b14c-c0bc9760fe0a" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Project Report </strong></span><strong>→ </strong><a href="https://drive.google.com/file/d/1f5zxuNSgIONcMzQFKB9p0xvj3JobXy0i/view?usp=sharing">https://drive.google.com/file/d/1f5zxuNSgIONcMzQFKB9p0xvj3JobXy0i/view?usp=sharing</a></li></ul></div></div><hr id="c7ffa3c2-d32c-4e1e-8569-cd4bab451692"/><h2 id="0114e361-8eb0-453c-81a0-419cbc0c0c22" class=""><span style="border-bottom:0.05em solid"><strong>DETECTING PATTERNS AND VARIABILITY IN INDIAN WINTER RAINFALL</strong></span></h2><div id="ba82ecbf-c69e-4645-b784-4aa8c798ba52" class="column-list"><div id="26a6cb6f-5322-42e3-8d30-b699186d1ef9" style="width:50%" class="column"><ul id="9215030d-6162-4cf0-8c3f-269cd16f0277" class="bulleted-list"><li style="list-style-type:disc">Reproduced a paper titled ”A prominent pattern of year-to-year variability in Indian Summer Monsoon Rainfall” published in the Proceedings of the National Academy of Sciences (PNAS) using the Indian Winter Monsoon dataset</li></ul><ul id="9991b479-922d-4c67-bc22-2939b19f27a3" class="bulleted-list"><li style="list-style-type:disc">Applied EOF and Maximal Covariance Analysis (MCA) on the sourced dataset to mathematically justify the observed physical phenomena</li></ul><ul id="8120d63e-b2f7-4c75-83ee-eba0027ce4b0" class="bulleted-list"><li style="list-style-type:disc"><strong>Skills Gained:</strong> Maximum Covariance Analysis, Empirical orthogonal functions, Physics and Climate Based Models, and Seasonality Variation.</li></ul><ul id="6fb01987-4457-44cd-aff4-c5fef9be0c39" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Project Report</strong></span><strong> → </strong><a href="https://drive.google.com/file/d/1LBQMmXqX-svzkS7b0NZwdHveqB9bQX-l/view?usp=sharing">https://drive.google.com/file/d/1LBQMmXqX-svzkS7b0NZwdHveqB9bQX-l/view?usp=sharing</a></li></ul><p id="e28018ef-0b0f-49fe-8edb-8ee3d5c3cdb7" class="">
+</p><p id="ea06f633-908c-491d-8cc1-ea8872e720a2" class="">
+</p><h2 id="51f57cdf-e9dd-409b-8d19-b2c1dddf7777" class=""><span style="border-bottom:0.05em solid">COVID 19 DASHBOARD</span></h2><figure id="22f3d717-fc86-495a-a776-2e05d2af29e4"><div class="source"><a href="https://youtu.be/G3o7exHNNHg">https://youtu.be/G3o7exHNNHg</a></div></figure></div><div id="e182e374-3c87-412a-a4bf-5a9def960c9b" style="width:50%" class="column"><figure id="1d49c2c6-e1e3-436e-b9e2-2f1d6556c8e6"><div class="source"><a href="https://youtu.be/UN_6-yx1My4">https://youtu.be/UN_6-yx1My4</a></div></figure><p id="6f0c3fe3-d03d-4fd2-b9c9-962dcfe558de" class="">
+</p><p id="e29fd27c-4f13-4bbc-ab4a-f21a5acf5171" class="">
+</p><p id="d4168b50-241c-4e43-bdb1-52ac7a3b1049" class="">
+</p><p id="bbf2b853-06cb-41a1-9fe6-d5a85fcc86ce" class="">
+</p><ul id="b09d9610-4ad0-45c8-bd39-c35d87b8937f" class="bulleted-list"><li style="list-style-type:disc">Reproduced the Susceptible Exposed Infected Recovered (SEIR) model to assess the coronavirus pandemic situation and predicted the future state of the pandemic in Ahmedabad city</li></ul><ul id="be70185a-d64b-4d9d-9129-726c4072a9a8" class="bulleted-list"><li style="list-style-type:disc">Responsible for analyzing several scenarios resulting in a change in the course of the pandemic based on parameters including testing rates and the imposed lockdown <strong><a href="https://drive.google.com/file/d/1iSlY7iAn_IkneaoNzgaMc944hHpD5UIq/view">(Received Appreciation from the Ministry of Healthcare, Government of India)</a></strong><strong>.</strong></li></ul><ul id="a3070083-7b8a-4d8a-813b-819d3639121d" class="bulleted-list"><li style="list-style-type:disc">Acknowledged by 35+ national and international newspapers for the formulation of the dashboard.</li></ul><ul id="c3f4fc81-5256-454e-80ac-bf41d2b5f910" class="bulleted-list"><li style="list-style-type:disc"><strong>Skills Gained:</strong> Network Science, Pandemic Forecasting, Epidemic Modelling, Tableau, Data Visualization</li></ul><ul id="bee59d21-2e32-4aef-b909-526fb1509752" class="bulleted-list"><li style="list-style-type:disc">🎉 <strong><a href="https://news.iitgn.ac.in/2020/05/15/iitgn-researchers-develop-an-interactive-covid-19-dashboard-to-aid-optimised-testing-and-post-lockdown-operations/">Media Highlights</a></strong></li></ul><ul id="e76e7b53-5880-4ea8-a666-c53449c9a78a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/MIR-AHD-Covid19-Dashboard">https://github.com/ayushlodha7/MIR-AHD-Covid19-Dashboard</a></li></ul></div></div><hr id="d601aa4b-88a4-45be-a700-716927d93688"/><h2 id="a6286adc-b359-48ad-b846-c5c64348fef5" class=""><span style="border-bottom:0.05em solid">COVID VACCINE DISTRIBUTION ACROSS INDIA</span></h2><div id="fa14abfd-cbe5-418b-b7b1-d73eb77faff3" class="column-list"><div id="04388d8d-037a-4221-a00c-dbd5e320831e" style="width:50%" class="column"><ul id="01ee22ce-b9f4-45fa-9fd3-6bdba101a925" class="bulleted-list"><li style="list-style-type:disc">Designed an Algorithm for selective vaccine distribution across the country.</li></ul><ul id="2a08e8df-9db1-4f12-a95b-9ed3b9ceff26" class="bulleted-list"><li style="list-style-type:disc">Created and Analysed the features of population density of the region, immunity index, HVI, SVI, Environmental Condition, and Comorbidity index of the area for the algorithm. Python was used to create the backend.</li></ul><ul id="1c6a2a40-03b2-4a42-a570-d1c55efc768b" class="bulleted-list"><li style="list-style-type:disc">Implemented various clustering and prioritizing algorithms and presented them using tableau maps and HTML, CSS frontend website.</li></ul><ul id="5ead9e2b-5bae-4c47-add6-37a8dc75b44e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/EY_Project">https://github.com/ayushlodha7/EY_Project</a></li></ul></div><div id="f1c702ef-16f2-4542-8b03-108aad312586" style="width:49.99999999999999%" class="column"><figure id="05de3c98-9d1a-4f3b-86ac-7a15988c0a05"><div class="source"><a href="https://youtu.be/uf7ILKns6Tc">https://youtu.be/uf7ILKns6Tc</a></div></figure></div></div><figure id="6f33130c-498d-454d-92b3-5aa494301c7b"><div class="source"><a href="https://docs.google.com/presentation/d/1Btg-uRp2NjeH8b8_zmIdxbtayBrH_Hff/edit#slide=id.p1">https://docs.google.com/presentation/d/1Btg-uRp2NjeH8b8_zmIdxbtayBrH_Hff/edit#slide=id.p1</a></div></figure><hr id="b3102064-63ac-44fe-a24c-04095eb36e44"/><h1 id="772a88df-3063-4644-a050-625985163c49" class=""><span style="border-bottom:0.05em solid">MASTER’S CLASS PROJECT @ IUPUI</span></h1><h2 id="d8f109f6-a90b-4236-b9ad-330f2897dfdf" class=""><span style="border-bottom:0.05em solid">IS CLIMATE CHANGE REAL? (TERM PROJECT)</span></h2><p id="3484f5d7-892e-4035-bb12-195eff737c5e" class=""><strong><em>COURSE: </em></strong><em>DATA VISUALIZATION (CS 55200) </em></p><p id="09af2776-f02a-4d4e-963b-6e705b6bb3af" class=""><strong><em>COURSE INSTRUCTOR:</em></strong><em> PROF. SHIAOFEN FANG</em></p><div id="6147bd47-8b56-4733-b8d2-0d8b613978d4" class="column-list"><div id="3f884c5a-a216-4535-8efd-45bd6726dee9" style="width:50%" class="column"><ul id="0b93c55a-f9cd-440b-9050-4c295ac2c1e2" class="bulleted-list"><li style="list-style-type:disc">Detecting Crop Rows is significant for agricultural applications as it can assist in automated field monitoring, precision farming, and yield estimation.</li></ul><ul id="0968b346-9a67-4648-8556-cd2dba0087f3" class="bulleted-list"><li style="list-style-type:disc">Developed machine learning models that can accurately classify images as containing crop rows or not, using architectures UNet and LinkNet.</li></ul><ul id="7bbe8443-3335-4c11-93fd-63201e49878e" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Project Report</strong></span><strong> → </strong></li></ul><ul id="8cff5b79-b8c2-469d-b8ee-45b2a4f37e0b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/climatecs552.github.io">https://github.com/ayushlodha7/climatecs552.github.io</a></li></ul><ul id="baef719b-11ba-4b2b-bedc-7c85b16e6397" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Landing Page</strong></span><strong>→ </strong><a href="https://climatecs552.github.io/"><strong>https://climatecs552.github.io/</strong></a><strong></strong></li></ul></div><div id="2aa37424-dede-405d-b8f4-ab938cf394ce" style="width:50%" class="column"><figure id="c248738e-dfd4-4397-acd9-1adaf6e8c191"><div class="source"><a href="https://docs.google.com/presentation/d/124vc7ZdIqdO_5PyRXljXkKuYEwltRals/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true">https://docs.google.com/presentation/d/124vc7ZdIqdO_5PyRXljXkKuYEwltRals/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true</a></div></figure></div></div><hr id="0cb1fb93-61d7-4382-acf7-8773730f4c08"/><h2 id="95a1b05a-d761-4479-aa1c-24e475063d67" class=""><span style="border-bottom:0.05em solid">PROJECT#1 (CS552)</span></h2><p id="0ecbdc66-f09e-4a54-b74f-ab596bfbc827" class=""><strong><em>COURSE: </em></strong><em>DATA VISUALIZATION (CS 55200) </em></p><p id="15ca0c74-f2f0-44ab-8e7f-c604f56e21ff" class=""><strong><em>COURSE INSTRUCTOR:</em></strong><em> PROF. SHIAOFEN FANG</em></p><div id="21f1afe5-3b42-403d-9aa6-43b19e5a461e" class="column-list"><div id="032f9009-d21e-4717-b556-b55b23e0b153" style="width:50%" class="column"><figure id="e2170201-48dc-40e9-8e4c-f83b46905d9a"><div class="source"><a href="https://docs.google.com/presentation/d/12q1dd58qXR_9ia2JrXf8lrKVikLX-jRF/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true">https://docs.google.com/presentation/d/12q1dd58qXR_9ia2JrXf8lrKVikLX-jRF/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true</a></div></figure></div><div id="4f8c1e0f-49f9-4d5a-84c6-1528d4b0e8fa" style="width:50.000000000000014%" class="column"><ul id="818d50bc-b5b7-4f87-b0cd-0eeef4901631" class="bulleted-list"><li style="list-style-type:disc">Created different Visualization from the Iris dataset, the goal is to differentiate visually the three types of iris flowers: Setosa, Virginica, and Versicolor.<ul id="66c53826-0ce6-4933-8891-fd5ae396fe9b" class="bulleted-list"><li style="list-style-type:circle"><strong>Input Dataset →</strong> iris.csv</li></ul><ul id="4728ae08-b4c1-4cb3-aafe-a60e6ff08acb" class="bulleted-list"><li style="list-style-type:circle"><strong>Output Visualizations</strong><ul id="56409a65-07cb-41cd-baed-7b58fc86d9b2" class="bulleted-list"><li style="list-style-type:square">Multibar Grouped Chart</li></ul><ul id="b22d3ea1-1232-47eb-8519-3d47d606734a" class="bulleted-list"><li style="list-style-type:square">Scatter Plot Matrix</li></ul><ul id="617de349-9ff3-4767-ae60-27201816dfa3" class="bulleted-list"><li style="list-style-type:square">Correlation Matrix Visualization</li></ul><ul id="23888fbd-cef8-4de8-aa4e-133fb88b1add" class="bulleted-list"><li style="list-style-type:square">Histograms</li></ul><ul id="d67bb709-ce44-4886-aff8-b27936c1df32" class="bulleted-list"><li style="list-style-type:square">Boxplots</li></ul><ul id="c921a42e-7d9d-4ebb-a6f1-2b7151a22a17" class="bulleted-list"><li style="list-style-type:square">Scatterplot Interactive</li></ul></li></ul></li></ul><ul id="24941eab-81c3-4b39-b18b-21380d985ffb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/Project-1_CSCI552_amlodha">https://github.com/ayushlodha7/Project-1_CSCI552_amlodha</a></li></ul><hr id="851da7bf-58f8-4038-bb7d-61b0fc633caf"/></div></div><div id="2d007a83-4767-481e-b93f-a68c7c5ff795" class="column-list"><div id="c6a0eeb5-899c-40e7-83a2-fe3ec6e247af" style="width:50%" class="column"><h2 id="0be2d9f3-9e26-4f7b-86e8-146c22d18517" class="">PROJECT#2 (CS552)</h2><p id="8e427273-f1d2-47a5-bfb4-4a5a16b11562" class=""><strong><em>COURSE: </em></strong><em>DATA VISUALIZATION (CS 55200) </em></p><p id="ab7e7f54-a6be-468a-a48a-85ce5d95bfe3" class=""><strong><em>COURSE INSTRUCTOR:</em></strong><em> PROF. SHIAOFEN FANG</em></p><ul id="da8549a1-fbcd-49fa-8856-c4de39ee8b66" class="bulleted-list"><li style="list-style-type:disc">From the given adjacency matrix created the below visualization.<ul id="485840d0-cecc-4940-ada9-632bd4d7798b" class="bulleted-list"><li style="list-style-type:circle">Manually draw a node-link graph from the given adjacency matrix</li></ul><ul id="ab05348a-0536-4d88-a741-798222ee70ef" class="bulleted-list"><li style="list-style-type:circle">Force Directed Layout Visualization using D3.js</li></ul><ul id="0e87663b-661f-4bb5-82d6-c1cdb6efd272" class="bulleted-list"><li style="list-style-type:circle">Arc Diagram Visualization using D3.js</li></ul><ul id="cc298272-1238-4b17-8fd1-e1781b0c7492" class="bulleted-list"><li style="list-style-type:circle">Radial Network Diagram Visualization using D3.js</li></ul></li></ul><ul id="eb79dea7-e89c-49a0-8361-45973acc29e0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/Project-2_CSCI552_amlodha">https://github.com/ayushlodha7/Project-2_CSCI552_amlodha</a></li></ul><hr id="e66e977f-6105-4ccc-a335-2e0ae9abae27"/></div><div id="54201dc0-c536-475c-8826-3087b599e784" style="width:50%" class="column"><p id="28f9c993-fd3a-45cc-9e29-509b7462f268" class="">
+</p><figure id="39a280b2-3c2e-4c9f-92eb-e18a22b293bc"><div class="source"><a href="https://docs.google.com/presentation/d/1bB2Ko6RFps79xYxTW1aIgHnSTGHRQ6k-/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true">https://docs.google.com/presentation/d/1bB2Ko6RFps79xYxTW1aIgHnSTGHRQ6k-/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true</a></div></figure><p id="d40f4e28-6bf7-4320-9fb4-644d11f3d655" class="">
+</p></div></div><h2 id="460606f0-9f2e-41b7-942c-868c28765d83" class="">PROJECT#3 (CS552)</h2><div id="281ef5d9-d41b-4f46-92e0-da40cf4a6c64" class="column-list"><div id="2c44d18d-4468-4c8e-928e-44e790394bf0" style="width:50%" class="column"><figure id="82dbac9c-338b-49df-9eae-5b410d9a9127"><div class="source"><a href="https://docs.google.com/presentation/d/14wuk3v77FHtIyfKe0CC0Iuc4GFRlXXVZ/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true">https://docs.google.com/presentation/d/14wuk3v77FHtIyfKe0CC0Iuc4GFRlXXVZ/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true</a></div></figure></div><div id="a62873a4-82cc-4b94-acd1-14cdc6184e16" style="width:50%" class="column"><p id="8c003953-6d21-49b6-992b-b67d23c00abc" class=""><strong><em>COURSE: </em></strong><em>DATA VISUALIZATION (CS 55200) </em></p><p id="96ded2f4-9f92-4339-8f83-0f1f1f822e7f" class=""><strong><em>COURSE INSTRUCTOR:</em></strong><em> PROF. SHIAOFEN FANG</em></p><ul id="e5f40f3a-174b-427d-b861-c65d068da23e" class="bulleted-list"><li style="list-style-type:disc">Coded the 3 VTK formats for data visualization<ul id="c2122485-2280-419d-a973-111df7e92872" class="bulleted-list"><li style="list-style-type:circle">The CT Head in Volume16 data format (attached).</li></ul><ul id="badd8944-f3ae-4544-9ae4-570eccf0d850" class="bulleted-list"><li style="list-style-type:circle">An Iron Protein dataset in vtk format (attached).</li></ul><ul id="ff458c57-3acd-4c4e-a644-88f70a69496c" class="bulleted-list"><li style="list-style-type:circle">A 100^3 sampling data set of the quadratic function </li></ul><p id="133beab3-7d80-4113-97c0-e12b47ae69fe" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>0.6</mn><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>0.2</mn><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>0.1</mn><mi>x</mi><mi>z</mi><mo>+</mo><mn>0.2</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">x^2+0.6y^2+0.2z^2+0.1xz+0.2x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord">0.6</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">0.2</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0.1</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0.2</span><span class="mord mathnormal">x</span></span></span></span></span><span>﻿</span></span></p></li></ul><ul id="bf7e54a4-2da0-43e6-a41a-f48fddfa4888" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/Project-3_CS552_amlodha">https://github.com/ayushlodha7/Project-3_CS552_amlodha</a></li></ul></div></div><hr id="3d1cca97-dadc-46b4-87a9-569a115f150a"/><h2 id="522ef3c5-f221-41fe-b1aa-b02be9df9d24" class=""><span style="border-bottom:0.05em solid">DETECTING CROP ROWS FROM IMAGE DATA</span></h2><p id="3e4acaa5-7ae1-46de-a442-dbaeae6d8a2b" class=""><em>COURSE: DEEP LEARNING (CS 59000)</em></p><p id="057eb89a-6244-43d5-a0c9-66e25c104b72" class=""><em>COURSE INSTRUCTOR: PROF. MOHAMMAD AL HASAN</em></p><ul id="c3230864-82af-4222-92d2-2fda1e7a1177" class="bulleted-list"><li style="list-style-type:disc">Detecting Crop Rows is significant for agricultural applications as it can assist in automated field monitoring, precision farming, and yield estimation.</li></ul><ul id="50e3e9b1-dd43-4569-9a49-55df01b606e7" class="bulleted-list"><li style="list-style-type:disc">Developed machine learning models that can accurately classify images as containing crop rows or not, using architectures UNet and LinkNet</li></ul><ul id="cb1dfb45-7fed-40b7-9d3f-5b7fa17cd731" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Project Report</strong></span><strong> → </strong><a href="https://drive.google.com/file/d/1fJ3rqHurMj7i23DwXByEH33YqpXAV-MK/view?usp=sharing">https://drive.google.com/file/d/1fJ3rqHurMj7i23DwXByEH33YqpXAV-MK/view?usp=sharing</a></li></ul><ul id="a3634764-fb4a-433e-a52e-e3d9131ed310" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/Detecting-Crop-Rows-from-Image-Data">https://github.com/ayushlodha7/Detecting-Crop-Rows-from-Image-Data</a></li></ul><ul id="fac35acc-fa0b-4d42-90da-a4e3dcfe845f" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Link to the Kaggle Competition Hosted by the Course Instructor </strong></span><strong>→ </strong><a href="https://www.kaggle.com/competitions/detecting-crop-rows-from-image-data/data">https://www.kaggle.com/competitions/detecting-crop-rows-from-image-data/data</a></li></ul><hr id="bf95a357-d595-46aa-a0b7-3a78f515966e"/><h2 id="c5d93786-b6a3-4780-834d-c583860ddfb7" class=""><span style="border-bottom:0.05em solid">PAPER REVIEW</span></h2><div id="31123bb2-e9b9-40db-81cc-694af6bd414e" class="column-list"><div id="638f5cbf-0dd1-4a4b-bac8-2d17b05aea12" style="width:50%" class="column"><p id="f6b417b0-58f9-482f-afa8-8fff7ac64eb9" class=""><em>COURSE: DEEP LEARNING (CS 59000)</em></p><p id="b68df0e1-8520-451c-9fb6-8f65bbe38bb5" class=""><em>COURSE INSTRUCTOR: PROF. MOHAMMAD AL HASAN</em></p><ul id="8aae5dd8-560b-425b-b558-4c0dd331a0a6" class="bulleted-list"><li style="list-style-type:disc">Paper Review of “Mean Teachers are better Role Models: Weight-averaged consistency targets improve semi-supervised deep learning models.”</li></ul><ul id="a835e5a2-2d9d-4d67-946f-13f654011ef2" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Paper Review Report</strong></span><strong> → </strong><a href="https://drive.google.com/file/d/1r-NXOUNvfpgTMuNzfaCJ2vhoFvjTq86u/view?usp=sharing">https://drive.google.com/file/d/1r-NXOUNvfpgTMuNzfaCJ2vhoFvjTq86u/view?usp=sharing</a></li></ul><ul id="53b3f108-af3a-4066-a451-660fbd6faa1a" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Link of Original Paper </strong></span><strong>→ </strong><a href="https://arxiv.org/abs/1703.01780">https://arxiv.org/abs/1703.01780</a></li></ul></div><div id="7ead783d-4695-4721-84e1-0b3b362fae5c" style="width:50%" class="column"><figure id="103673c2-89cf-45f5-b717-c9e09ebbb62c"><div class="source"><a href="https://docs.google.com/presentation/d/1HRM07xX88uxPWYolFmYpASttaa1CedMI/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true">https://docs.google.com/presentation/d/1HRM07xX88uxPWYolFmYpASttaa1CedMI/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true</a></div></figure></div></div><hr id="2dcb538f-6787-43d2-9d3e-fdd32e8876e5"/><h2 id="ff136d2d-27a8-4709-8114-9b80f792f276" class=""><span style="border-bottom:0.05em solid"><strong>BAYESIAN CLASSIFICATION ANALYSIS ON CAR INSURANCE CLAIMS</strong></span></h2><p id="e63e4b92-a5c9-4344-9175-2f0813efecea" class=""><em>COURSE: APPLIED BAYESIAN STATISTICS AND BAYESIAN THEORY (STAT 52900)</em></p><p id="1a3ade2a-a2df-4c61-ae27-5728b9f33333" class=""><em>COURSE INSTRUCTOR: PROF. BEN BOUKAI</em></p><ul id="51c58783-c882-4553-831e-e33b80d02ead" class="bulleted-list"><li style="list-style-type:disc">Implemented various state-of-the-art models along with baseline logistic classification model on the dataset of car insurance claim decisions along with details of driver and car to compare it with the bayesian way of classification models</li></ul><ul id="ce770f2a-8a96-4a41-8096-2e5da35a07ca" class="bulleted-list"><li style="list-style-type:disc">Modeled a variety of Bayesian models with an informative and noninformative choice of priors and outperformed the baseline and state of art models in terms of accuracy and flexibility of interpretation.</li></ul><ul id="89974b9e-435a-4c71-b2b3-7f1de0c3c857" class="bulleted-list"><li style="list-style-type:disc"><strong>Skills Gained:</strong> Bayesian Data Analysis, Hierarchical Modelling, MCMC Diagnostics, Classification Models ‐ Logistic, Bernoulli Logistic</li></ul><div id="6cfa26e3-9374-4537-8483-e3d169c26c26" class="column-list"><div id="9af6c788-5c26-48ec-b4b6-a8cfd86a178c" style="width:50%" class="column"><figure id="39ff5c99-0b64-47c2-b5b7-9ae29d8ae971"><a href="https://medium.com/@ayushlodha7/bayesian-way-of-building-classification-models-7b409500bb41" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Bayesian Way of Building Classification Models.</div><div class="bookmark-description">There are various classification problems around us. Some are binary, and some are multi-level classification models. Binary Classification…</div></div><div class="bookmark-href"><img src="https://miro.medium.com/v2/resize:fill:152:152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png" class="icon bookmark-icon"/>https://medium.com/@ayushlodha7/bayesian-way-of-building-classification-models-7b409500bb41</div></div><img src="https://miro.medium.com/v2/resize:fit:848/1*kWRYe-_B2PaYIg5r1kpr6g.png" class="bookmark-image"/></a></figure></div><div id="57fee5d0-0720-4099-b46f-122b109672e0" style="width:50%" class="column"><figure id="73f67c22-5c36-43ed-b00c-c1623f58a251"><a href="https://github.com/ayushlodha7/bayesianfinalproject" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - ayushlodha7/bayesianfinalproject</div><div class="bookmark-description">Contribute to ayushlodha7/bayesianfinalproject development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/ayushlodha7/bayesianfinalproject</div></div><img src="https://opengraph.githubassets.com/70245337ba939cf776665a758ae6a8e7c07959e837de309e9654cdd477b4b49f/ayushlodha7/bayesianfinalproject" class="bookmark-image"/></a></figure></div></div><hr id="49ba2944-039d-4c43-9495-e7ca417ce943"/><h1 id="5788215a-fcd5-4fb6-b391-10d7c871e0db" class=""><span style="border-bottom:0.05em solid">BACHELOR’S CLASS PROJECTS @ IIT GANDHINAGAR</span></h1><h2 id="b2ac3086-858b-47d7-b0d0-55d3dfd68c31" class=""><span style="border-bottom:0.05em solid">MINITORCH IMPLEMENTATION</span></h2><div id="f414c080-38e9-46da-9c69-768e6fa131ee" class="column-list"><div id="54c0e175-8853-4a5f-85ad-4c3a369393c4" style="width:50%" class="column"><p id="b7722d38-2b8d-4c06-afc5-897670be706f" class=""><em><em>COURSE: SPECIAL TOPICS IN COMPUTER SCIENCE: ADVANCED MACHINE LEARNING (CS 691-IV) </em></em></p><p id="56c791b0-c0e6-4729-ae6d-855e5c1d2cd6" class=""><em>COURSE INSTRUCTOR: PROF. ANIRBAN DASGUPTA</em></p><ul id="0e73903c-9b45-4508-9dee-aa98ba929085" class="bulleted-list"><li style="list-style-type:disc">Reimplemented a minimal library from scratch to help understand the Dynamic Computational Graph of PyTorch.</li></ul><ul id="bf566711-030c-4524-9cc0-b8d640d665d9" class="bulleted-list"><li style="list-style-type:disc">Designed and internalized concepts of deep learning systems such that the developed library can run the PyTorch code efficiently.</li></ul><hr id="71136f5c-c877-4733-9013-234a9483a260"/><p id="9ef79e13-bf4e-42d5-9954-934cb4da6ab9" class="">
+</p></div><div id="56e3a69b-0a27-450d-b154-72f61578c6dc" style="width:50%" class="column"><figure id="5fbe7a21-0b32-4277-b62b-e81e07a440b9"><div class="source"><a href="https://docs.google.com/presentation/d/1I7Unh6uV7HWaOFnZfxCw8AT-9fbtn0xj/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true">https://docs.google.com/presentation/d/1I7Unh6uV7HWaOFnZfxCw8AT-9fbtn0xj/edit?usp=sharing&amp;ouid=108536631747382312737&amp;rtpof=true&amp;sd=true</a></div></figure></div></div><div id="16d82cf0-f9d9-4293-873c-f640d628af41" class="column-list"><div id="60420792-51ea-41b8-a3b3-bae6d8bef503" style="width:50%" class="column"><h2 id="fa39b585-8d85-421b-b699-31731455105e" class=""><span style="border-bottom:0.05em solid">FACE RECOGNITION AND CLASSIFICATION</span></h2><p id="67d6c3b4-7527-4cc1-823d-6dfe16d42681" class=""><em><em>COURSE: PROBABILITY AND RANDOM PROCESS (ES 331) </em></em></p><p id="ce84b2ce-b50b-4190-9628-35ed70e78d22" class=""><em>COURSE INSTRUCTOR: PROF. SHANMUGANATHAN RAMAN</em></p><ul id="87c4cb39-0afe-42fe-9a02-0f6a3797d12e" class="bulleted-list"><li style="list-style-type:disc">Applied the classic Viola-Jones algorithm for the detection of faces</li></ul><ul id="2b3a139b-7a9a-4112-98fc-9be8d049ee7e" class="bulleted-list"><li style="list-style-type:disc">Conceived an algorithm for the classification of detected faces using the Eigenface concept</li></ul><ul id="b6fe9a1e-32d5-48c1-8065-6ac80e9722be" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/Face-Recognition">https://github.com/ayushlodha7/Face-Recognition</a></li></ul><ul id="2fe53577-c71e-4cdb-bcec-3e61bdfe366a" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Project Report</strong></span><strong> → </strong><a href="https://drive.google.com/file/d/1H141AEjbg6FSODKY2sJ1mepM9LT1fG5k/view?usp=sharing">https://drive.google.com/file/d/1H141AEjbg6FSODKY2sJ1mepM9LT1fG5k/view?usp=sharing</a></li></ul><hr id="bd5dae01-4d9f-475c-a255-6d40eb807bc1"/></div><div id="f3b95cf2-f556-4a10-93cb-b4d83645bf26" style="width:50%" class="column"><h2 id="e955a3b3-3f66-41bd-86d2-dc413b57f10c" class=""><span style="border-bottom:0.05em solid">IMAGE DENOISING</span></h2><p id="98ae0777-ffad-48cc-b82c-dd2f7eeeebdf" class=""><em><em>COURSE: PROBABILITY AND RANDOM PROCESS (ES 331) </em></em></p><p id="45d81ced-1cde-4fc4-9fe8-94c7dd838dd0" class=""><em>COURSE INSTRUCTOR: PROF. SHANMUGANATHAN RAMAN</em></p><ul id="7d36533c-1096-436c-b898-d81acc4540a5" class="bulleted-list"><li style="list-style-type:disc">Performed Image Denoising method for removing noise from the image, using a nonlocal means algorithm</li></ul><ul id="977c9a7c-702d-491f-906f-35d8d4d62312" class="bulleted-list"><li style="list-style-type:disc">Compared results after image denoising with the Gaussian filtering method.</li></ul><ul id="c5233387-4007-4f83-8594-483570ac27b4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/Image-Denoising">https://github.com/ayushlodha7/Image-Denoising</a></li></ul><ul id="466fda1d-5531-4540-b801-e7ac2b371dad" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Project Report </strong></span><strong>→</strong><a href="https://drive.google.com/file/d/14Ouf0-pUUzxMmllSFY8gikTZKXdNAB2G/view?usp=sharing">https://drive.google.com/file/d/14Ouf0-pUUzxMmllSFY8gikTZKXdNAB2G/view?usp=sharing</a></li></ul><hr id="43e51375-fe7b-450e-99fe-3042678a724e"/></div></div><h2 id="d564ab64-e718-492d-9b84-f94c6bf843a0" class=""><span style="border-bottom:0.05em solid">PREDICTION OF AGRICULTURAL PRODUCTION</span></h2><p id="93f3c633-b183-4dc5-a957-a1effd9c88f0" class=""><em><em>COURSE: SUSTAINABILITY AND ENVIRONMENT (CE 202) </em></em></p><p id="9e37f5d2-c745-45d9-bd6e-235d1a7637da" class=""><em>COURSE INSTRUCTOR: PROF. UDIT BHATIA AND PROF. VIMAL MISHRA</em></p><ul id="9119e570-a28b-4f94-9553-55e89532376d" class="bulleted-list"><li style="list-style-type:disc">Acquired datasets from various sources, reduced the complexity and redundancy using Principal Component Analysis (PCA) and SVD, and looked into the correlation of production and climatic variables.</li></ul><ul id="2fa9ea6e-82b8-4c2a-b75e-e341550ad417" class="bulleted-list"><li style="list-style-type:disc">Predicted the agriculture yield and obtained a relative error of less than 20% by using multilinear, Lasso, and LGB regressors across several crops and seasons for all districts in Gujarat</li></ul><ul id="1703b217-80b4-4ecd-9dba-09304eb4b174" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/ayushlodha7/Agricultural_Predictions">https://github.com/ayushlodha7/Agricultural_Predictions</a></li></ul><ul id="2cbbc94c-20a1-429e-a9f8-c53556b7f2fc" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Project Report</strong></span> <strong>→</strong><a href="https://drive.google.com/file/d/10aRATaIC1qyeeGPYCU1jcWryT4IfWmna/view?usp=sharing">https://drive.google.com/file/d/10aRATaIC1qyeeGPYCU1jcWryT4IfWmna/view?usp=sharing</a></li></ul><hr id="bb5a503f-454d-40ed-92cb-7d19e7a9b8dd"/><h2 id="05f7842c-f4b7-40b0-ad55-e744601d68ab" class=""><span style="border-bottom:0.05em solid"><strong>JOURNAL REVIEW-MINI PROJECT</strong></span></h2><div id="f076d672-0568-4342-a6aa-706c2b86848c" class="column-list"><div id="e3c1fc74-4656-40e5-bbc1-771927eea92a" style="width:50%" class="column"><ul id="13c077f0-f92e-4c17-8d95-2b716841ab8f" class="bulleted-list"><li style="list-style-type:disc">For the course of EH-691, reviewed the journal- &quot;A risk-based approach to flood management decisions in a nonstationary word&quot; and besides the video is the explanation of the same.</li></ul></div><div id="0b29adfc-bbe9-4b0a-ba19-8c4c116f5fa6" style="width:50%" class="column"><figure id="9ee92f25-8287-4bef-92e2-c9f52f5da3a4"><div class="source"><a href="https://youtu.be/Me7esFWeOFg">https://youtu.be/Me7esFWeOFg</a></div></figure></div></div><p id="1e307e03-1c44-4a6b-b1af-f94c408011a8" class="">
+</p><p id="d7db9292-5dbe-4214-869f-a44c85f25190" class="">
+</p><hr id="251e738b-7cd7-4bdf-b691-cadbe8a07ed5"/></div></article></body></html>
